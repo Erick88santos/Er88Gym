@@ -5,12 +5,13 @@
 package View;
 
 import Model.Aluno;
+import Model.Pessoa;
 import Model.Servico;
 import Model.Usuario;
 
 /**
  *
- * @author erick Dentro dessa classe vai ser testado todos os requisitos da classe serviços
+ * @author erick Dentro dessa classe vai ser testado todos os requisitos e classes/ A classe "ABSTRATA" pessoa e não pode ser instânciada 
  * 
  */
 public class Main {
@@ -31,5 +32,8 @@ public class Main {
         
         Usuario usuario = new Usuario(1, "professor", "senha");
         System.out.println(usuario.getNome()); 
+    
+        Pessoa pessoa = new Pessoa(1, "buga");
+    
     }
 }
