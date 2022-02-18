@@ -26,10 +26,10 @@ public class Main {
         System.out.println("Valor: "+  servico.getValor());
         
         
-        Aluno aluno = new Aluno(1, "Erick Santos", 'M', "81985270632", "Tv do nobre 2857");
-        System.out.println(aluno);
+        Aluno aluno = new Aluno(1, "erick", "Tv do nobre 2857", "53401611");
+        System.out.println(aluno.getNome());
         
-        Usuario usuario = new Usuario(1, "cezar", "senha");
-        System.out.println(usuario);
+        Usuario usuario = new Usuario(1, "professor", "senha");
+        System.out.println(usuario.getNome()); 
     }
 }
