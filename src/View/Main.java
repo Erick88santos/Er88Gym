@@ -11,7 +11,7 @@ import Model.Usuario;
 
 /**
  *
- * @author erick Dentro dessa classe vai ser testado todos os requisitos e classes/ A classe "ABSTRATA" pessoa e não pode ser instânciada 
+ * @author erick Dentro dessa classe vai ser testado todos os requisitos e classes/ A classe "ABSTRATA" pessoa e não pode ser instânciada para não se juntar com outras classes e vir a confundir o código 
  * 
  */
 public class Main {
@@ -33,7 +33,7 @@ public class Main {
         Usuario usuario = new Usuario(1, "professor", "senha");
         System.out.println(usuario.getNome()); 
     
-        Pessoa pessoa = new Pessoa(1, "buga");
+       
     
     }
 }
