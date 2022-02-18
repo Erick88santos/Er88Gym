@@ -22,7 +22,7 @@ public class Usuario extends Pessoa{
     }
     
 
-    public Usuario(String senha, String nivelAcesso, int id, String nome, char sexo, String dataNascimento, String telefone, String email, String documento) {
+    public Usuario(String senha, String nivelAcesso, int id, String nome, char sexo, String    dataNascimento, String telefone, String email, String documento) {
         super(id, nome, sexo, dataNascimento, telefone, email, documento);
         this.senha = senha;
         this.nivelAcesso = nivelAcesso;

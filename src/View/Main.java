@@ -5,6 +5,7 @@
 package View;
 
 import Model.Aluno;
+import Model.Mensalidade;
 import Model.Pessoa;
 import Model.Servico;
 import Model.Usuario;
@@ -33,7 +34,8 @@ public class Main {
         Usuario usuario = new Usuario(1, "professor", "senha");
         System.out.println(usuario.getNome()); 
     
+       Mensalidade mensalidade = new Mensalidade(1, aluno, servico, 50, "18/02/2022  14:00"); 
+        System.out.println(mensalidade.getAluno().getNome());
        
-    
     }
 }

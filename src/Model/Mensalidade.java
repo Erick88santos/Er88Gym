@@ -18,15 +18,15 @@ public class Mensalidade {
     
     
     private int id;
-    private Aluno cliente;
+    private Aluno aluno;
     private Servico servico;
     private float valor;
     private Date data;
     private String observacao;
 
-    public Mensalidade(int id, Aluno cliente, Servico servico, float valor, String data) {
+    public Mensalidade(int id, Aluno aluno, Servico servico, float valor, String data) {
         this.id = id;
-        this.cliente = cliente;
+        this.aluno = aluno;
         this.servico = servico;
         this.valor = valor;
         try {
@@ -44,12 +44,12 @@ public class Mensalidade {
         this.id = id;
     }
 
-    public Aluno getCliente() {
-        return cliente;
+    public Aluno getAluno() {
+        return aluno;
     }
 
     public void setCliente(Aluno cliente) {
-        this.cliente = cliente;
+        this.aluno = cliente;
     }
 
     public Servico getServico() {
