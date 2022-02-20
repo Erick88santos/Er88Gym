@@ -18,10 +18,10 @@ public class LoginController {
         this.View = View;
     }
     
-    public void FizTarefa(){
+    public void fizTarefa(){
         System.out.println("Fiz uma consulta de algo do DataBASE");
         
-        this.View.exibeMensagem("Executei o fiz tarefa ");
+        this.View.exibeMensagem("Você precisa de um usuário e senha para acessar o ERGym");
     }
     
 }
