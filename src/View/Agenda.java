@@ -71,7 +71,7 @@ public class Agenda extends javax.swing.JFrame {
                 jTextField3ActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, 130, 20));
+        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, 130, 40));
 
         jToggleButton1.setBackground(new java.awt.Color(102, 255, 0));
         jToggleButton1.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N

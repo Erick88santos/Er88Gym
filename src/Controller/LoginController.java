@@ -4,6 +4,7 @@
  */
 package Controller;
 
+import Controller.Helper.LoginHelper;
 import Model.Usuario;
 import View.Login;
 
@@ -13,25 +14,24 @@ import View.Login;
  */
 public class LoginController {
 
-    private final Login View;
+    private final Login view;
+    private LoginHelper helper;
 
-    public LoginController(Login View) {
-        this.View = View;
+    public LoginController(Login view) {
+        this.view = view;
+        this.helper = new LoginHelper(view);
     }
     
     public void entrarNoSistema(){
         //Pegando usuário da View
-    String nome = View.getTextUsuario().getText();
-    String senha = View.getTextSenha().getText();
-    
-    Usuario modelo = new Usuario(0, nome, senha);
+   
     
     }
     
     public void fizTarefa(){
        System.out.println("Fiz uma consulta de algo do DataBASE");
       
-        this.View.exibeMensagem("Você precisa de um usuário e senha para acessar o ERGym");
+        this.view.exibeMensagem("Você precisa de um usuário e senha para acessar o ERGym");
     }
     
 }

@@ -17,7 +17,8 @@ import javax.swing.JTextField;
 public class Login extends javax.swing.JFrame {
 
     private final LoginController controller;
-
+    public Object getTextSenha;
+    public Object getTextNome;
     /**
      * Creates new form Login
      */
@@ -47,7 +48,7 @@ public class Login extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        TextUsuario.setToolTipText("TextUsuario");
+        TextUsuario.setToolTipText("");
         TextUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TextUsuarioActionPerformed(evt);
@@ -56,6 +57,11 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(TextUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 270, 260, 60));
 
         TextSenha.setToolTipText("");
+        TextSenha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TextSenhaActionPerformed(evt);
+            }
+        });
         getContentPane().add(TextSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 410, 270, 60));
 
         jButton1.setText("ENTRAR");
@@ -98,6 +104,10 @@ public class Login extends javax.swing.JFrame {
         // Vai executar sempre que clicarr no botaão:
         this.controller.fizTarefa();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void TextSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextSenhaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TextSenhaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -164,7 +174,5 @@ public class Login extends javax.swing.JFrame {
     public void setTextUsuario(JTextField TextUsuario) {
         this.TextUsuario = TextUsuario;
     }
-    
-     
-    
+
 }
