@@ -36,7 +36,13 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        TextUsuario = new javax.swing.JTextField();
+        try {
+            TextUsuario =(javax.swing.JTextField)java.beans.Beans.instantiate(getClass().getClassLoader(), "View.Login_TextUsuario");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (java.io.IOException e) {
+            e.printStackTrace();
+        }
         TextSenha = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
         jLabelSenha = new javax.swing.JLabel();
@@ -46,9 +52,18 @@ public class Login extends javax.swing.JFrame {
         jLabelFundo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        TextUsuario.setToolTipText("");
+        TextUsuario.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+                TextUsuarioAncestorMoved(evt);
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
         TextUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TextUsuarioActionPerformed(evt);
@@ -62,7 +77,7 @@ public class Login extends javax.swing.JFrame {
                 TextSenhaActionPerformed(evt);
             }
         });
-        getContentPane().add(TextSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 410, 270, 60));
+        getContentPane().add(TextSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 400, 270, 60));
 
         jButton1.setText("ENTRAR");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -109,6 +124,14 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_TextSenhaActionPerformed
 
+    private void TextUsuarioAncestorMoved(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_TextUsuarioAncestorMoved
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TextUsuarioAncestorMoved
+
+    private void TextUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextUsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TextUsuarioActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -152,7 +175,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelPainelLogin;
     private javax.swing.JLabel jLabelSenha;
     private javax.swing.JLabel jLabelTitlePainel;
-    private javax.swing.JLabel jLabelUsuario;
+    public javax.swing.JLabel jLabelUsuario;
     // End of variables declaration//GEN-END:variables
 
     public void exibeMensagem(String mensagem) {

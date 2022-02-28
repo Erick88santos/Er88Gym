@@ -18,12 +18,21 @@ public class LoginHelper{
     public Usuario obterModelo(){
         String nome = view.getTextUsuario().getText();
         String senha = view.getTextSenha().getText();
-        Usuario modelo = new Usuario(0, "", "");
+        Usuario modelo = new Usuario(0, nome, senha);
         return modelo;
         
     }
     
     public void setarModelo(Usuario modelo){
+        String nome = modelo.getNome();
+        String senha = modelo.getSenha();
         
+        view.getTextUsuario().setText(nome);
+        view.getTextSenha().setText(senha);
+    }
+    
+    public void limparTela(){
+        view.getTextUsuario().setText("");
+        view.getTextSenha().setText("");
     }
 }

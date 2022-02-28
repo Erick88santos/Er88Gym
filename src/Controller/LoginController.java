@@ -24,7 +24,7 @@ public class LoginController {
     
     public void entrarNoSistema(){
         //Pegando usuário da View
-   
+        Usuario usuario = helper.obterModelo();
     
     }
     
