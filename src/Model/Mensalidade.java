@@ -30,7 +30,7 @@ public class Mensalidade {
         this.servico = servico;
         this.valor = valor;
         try {
-            this.data = new SimpleDateFormat("dd/MM/yyyy  HH:mm").parse(data);
+            this.data = new SimpleDateFormat("dd/MM/yyyy").parse(data);
                     } catch (ParseException ex) {
             Logger.getLogger(Mensalidade.class.getName()).log(Level.SEVERE, null, ex);
         }

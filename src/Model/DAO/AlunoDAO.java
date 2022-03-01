@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+
  */
 package Model.DAO;
 
@@ -10,13 +8,13 @@ import java.util.ArrayList;
 
 /**
  *
- * @author tiago
+ * @author erick
  */
 public class AlunoDAO {
     
     
     /**
-     * Insere um cliente dentro do banco de dados
+     * Insere um aluno dentro do banco de dados
      * @param aluno exige que seja passado um objeto do tipo cliente
      */
     public void insert(Aluno aluno){
@@ -65,8 +63,8 @@ public class AlunoDAO {
     
     /**
      * Compara se dois objetos tem a propriedade id igual
-     * @param cliente
-     * @param clienteAComparar
+     * @param aluno
+     * @param AlunoAComparar
      * @return verdadeiro caso os id forem iguais e falso se nao forem
      */
     private boolean idSaoIguais(Aluno aluno, Aluno  alunoAComparar) {

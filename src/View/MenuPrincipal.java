@@ -4,17 +4,22 @@
  */
 package View;
 
+import Controller.MenuPrincipalController;
+
 /**
  *
  * @author erick
  */
 public class MenuPrincipal extends javax.swing.JFrame {
 
+    private final MenuPrincipalController controller;
+
     /**
      * Creates new form MenuPrincipal
      */
     public MenuPrincipal() {
         initComponents();
+        this.controller = new MenuPrincipalController(this);
     }
 
     /**
@@ -28,11 +33,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
+        MenuCadastro = new javax.swing.JMenu();
         jMenuItemAluno = new javax.swing.JMenuItem();
         jMenuItemServico = new javax.swing.JMenuItem();
         jMenuItemUsuarios = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
+        MenuOperacao = new javax.swing.JMenu();
+        jMenuItemAgenda = new javax.swing.JMenuItem();
+        MenuRelatorio = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -40,8 +47,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Imagens/fundo-gym.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 13, -1, 582));
 
-        jMenu1.setText("Cadastro");
-        jMenu1.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+        MenuCadastro.setText("Cadastro");
+        MenuCadastro.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
 
         jMenuItemAluno.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Icons/cliente32-icon.png"))); // NOI18N
         jMenuItemAluno.setText("Aluno");
@@ -50,7 +57,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 jMenuItemAlunoActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItemAluno);
+        MenuCadastro.add(jMenuItemAluno);
 
         jMenuItemServico.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Icons/training-icon.png"))); // NOI18N
         jMenuItemServico.setText("Serviços");
@@ -59,17 +66,32 @@ public class MenuPrincipal extends javax.swing.JFrame {
                 jMenuItemServicoActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItemServico);
+        MenuCadastro.add(jMenuItemServico);
 
         jMenuItemUsuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Icons/usuario32-icon.png"))); // NOI18N
         jMenuItemUsuarios.setText("Usuários");
-        jMenu1.add(jMenuItemUsuarios);
+        MenuCadastro.add(jMenuItemUsuarios);
 
-        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(MenuCadastro);
 
-        jMenu2.setText("Operação");
-        jMenu2.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
-        jMenuBar1.add(jMenu2);
+        MenuOperacao.setText("Operação");
+        MenuOperacao.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+
+        jMenuItemAgenda.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+        jMenuItemAgenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Icons/agenda32-icon.png"))); // NOI18N
+        jMenuItemAgenda.setText("Agenda");
+        jMenuItemAgenda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemAgendaActionPerformed(evt);
+            }
+        });
+        MenuOperacao.add(jMenuItemAgenda);
+
+        jMenuBar1.add(MenuOperacao);
+
+        MenuRelatorio.setText("Relatório");
+        MenuRelatorio.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+        jMenuBar1.add(MenuRelatorio);
 
         setJMenuBar(jMenuBar1);
 
@@ -83,6 +105,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void jMenuItemServicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemServicoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItemServicoActionPerformed
+
+    private void jMenuItemAgendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemAgendaActionPerformed
+        this.controller.navegarParaAgenda();
+    }//GEN-LAST:event_jMenuItemAgendaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -120,10 +146,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu MenuCadastro;
+    private javax.swing.JMenu MenuOperacao;
+    private javax.swing.JMenu MenuRelatorio;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItemAgenda;
     private javax.swing.JMenuItem jMenuItemAluno;
     private javax.swing.JMenuItem jMenuItemServico;
     private javax.swing.JMenuItem jMenuItemUsuarios;

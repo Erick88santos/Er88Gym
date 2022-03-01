@@ -16,7 +16,7 @@ public class Aluno extends Pessoa{
     private String endereco;
     private String cep;
 
-    public Aluno(String endereco, String cep, int id, String nome, char sexo, String dataNascimento, String telefone, String email, String documento) {
+    public Aluno( int id, String nome, char sexo, String dataNascimento, String telefone, String email, String documento, String endereco, String cep) {
         super(id, nome, sexo, dataNascimento, telefone, email, documento);
         this.endereco = endereco;
         this.cep = cep;

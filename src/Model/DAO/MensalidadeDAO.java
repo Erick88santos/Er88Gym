@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author tiago
+ * @author erick
  */
 public class MensalidadeDAO {
     
@@ -46,7 +46,7 @@ public class MensalidadeDAO {
     }
     
     /**
-     * Deleta um objeto do banco de dados pelo id do agendamento passado
+     * Deleta um objeto do banco de dados pelo id da mensalidade passado
      * @param mensalidade
      * @return 
      */
@@ -61,7 +61,7 @@ public class MensalidadeDAO {
     }
     
     /**
-     * Retorna um arraylist com todos os agendamentos do banco de dados
+     * Retorna um arraylist com todos os mensalidade do banco de dados
      * @return uma lista com todos os registros do banco
      */
     public ArrayList<Mensalidade> selectAll(){

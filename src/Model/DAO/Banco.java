@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author tiago
+ * @author erick
  */
 public class Banco {
     
@@ -24,7 +24,8 @@ public class Banco {
     
     
     
-    @SuppressWarnings("empty-statement")
+   
+    @SuppressWarnings("Convert2Diamond")
     public static void inicia(){
     
         //Instancia os Objetos
@@ -37,8 +38,9 @@ public class Banco {
         
         Usuario usuario1 = new Usuario(1, "professor", 'M', "09/05/1996", "30212121", "cezar.atitude@gmail.com", "521454123", "professor", "administrador");
         Usuario usuario2 = new Usuario(2, "estagiario", 'M', "09/05/1996", "30212122", "estagiarioatitude@gmail.com", "451244123", "estagiario", "funcionario");
-         
-        Aluno aluno1 = new Aluno(1, "Alan Figueiredo", 'M', "30/01/1995", "30212126", "tiagoluz.h607@gmail.com", "5142487", "Rua jaboti 35 Canudos NH",  "93300012");
+        
+        
+        Aluno aluno1 = new Aluno(2, "Alan Figueiredo", 'M', "30/01/1995", "30212126", "tiagoluz.h607@gmail.com", "5142487", "Rua jaboti 35 Canudos NH",  "93300012");
         Aluno aluno2 = new Aluno(2, "Judite Oliveira", 'F', "30/08/1994", "30212127", "juditeoliveirapet@gmail.com", "5142487745", "Rua campo bom 78 Centro NH",  "93300045");
         Aluno aluno3 = new Aluno(3, "Paulo Ricado", 'M', "24/04/1997", "30212128", "pauloricardopet@gmail.com", "78451458", "Rua Tres Irmaos 30 Vila Nova - NH",  "933007496");
         Aluno aluno4 = new Aluno(4, "Neymar Santos", 'M', "20/08/1995", "30212130", "neymarsantospet@gmail.com", "2745487", "Rua Lombardi 40 Canudos NH",  "93300748");
