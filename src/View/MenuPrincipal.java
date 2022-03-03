@@ -32,7 +32,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jMenuBar1 = new javax.swing.JMenuBar();
+        MenuPrincipal = new javax.swing.JMenuBar();
         MenuCadastro = new javax.swing.JMenu();
         jMenuItemAluno = new javax.swing.JMenuItem();
         jMenuItemServico = new javax.swing.JMenuItem();
@@ -72,7 +72,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jMenuItemUsuarios.setText("Usuários");
         MenuCadastro.add(jMenuItemUsuarios);
 
-        jMenuBar1.add(MenuCadastro);
+        MenuPrincipal.add(MenuCadastro);
 
         MenuOperacao.setText("Operação");
         MenuOperacao.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
@@ -87,13 +87,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
         });
         MenuOperacao.add(jMenuItemAgenda);
 
-        jMenuBar1.add(MenuOperacao);
+        MenuPrincipal.add(MenuOperacao);
 
         MenuRelatorio.setText("Relatório");
         MenuRelatorio.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
-        jMenuBar1.add(MenuRelatorio);
+        MenuPrincipal.add(MenuRelatorio);
 
-        setJMenuBar(jMenuBar1);
+        setJMenuBar(MenuPrincipal);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -148,9 +148,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu MenuCadastro;
     private javax.swing.JMenu MenuOperacao;
+    private javax.swing.JMenuBar MenuPrincipal;
     private javax.swing.JMenu MenuRelatorio;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItemAgenda;
     private javax.swing.JMenuItem jMenuItemAluno;
     private javax.swing.JMenuItem jMenuItemServico;
