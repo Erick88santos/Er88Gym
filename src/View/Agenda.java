@@ -4,18 +4,33 @@
  */
 package View;
 
+import Controller.AgendaController;
+import java.awt.event.ActionEvent;
+import java.awt.event.ComponentEvent;
+import java.awt.event.ContainerEvent;
+import javax.swing.JComboBox;
+import javax.swing.JFormattedTextField;
+import javax.swing.JLabel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.JToggleButton;
+
 /**
  *
  * @author erick
  */
 public class Agenda extends javax.swing.JFrame {
-
+    private final AgendaController controller;
+    private JTable TableMensalidade;
     /**
      * Creates new form Agenda
      */
     public Agenda() {
         initComponents();
-    }
+        controller = new AgendaController(this);
+        iniciar();
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -26,104 +41,114 @@ public class Agenda extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        TableMensalidade1 = new javax.swing.JTable();
         jToggleButton1 = new javax.swing.JToggleButton();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jLabelData = new javax.swing.JLabel();
+        jTextId = new javax.swing.JTextField();
+        jTextValor = new javax.swing.JTextField();
+        jComboBoxAluno = new javax.swing.JComboBox<>();
+        jComboBoxServico = new javax.swing.JComboBox<>();
+        TituloAgenda = new javax.swing.JLabel();
+        jFormattedTextField1 = new javax.swing.JFormattedTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabelId = new javax.swing.JLabel();
+        jLabelAluno = new javax.swing.JLabel();
+        jLabelServico = new javax.swing.JLabel();
+        jLabelValor = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
-        jLabelFundoAgenda = new javax.swing.JLabel();
+        try {
+            jLabelFundoAgenda =(javax.swing.JLabel)java.beans.Beans.instantiate(getClass().getClassLoader(), "View.Agenda_jLabelFundoAgenda");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (java.io.IOException e) {
+            e.printStackTrace();
+        }
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setModalExclusionType(null);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        TableMensalidade1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "ALUNO", "SERVIÇO", "VALOR", "DATA", "OBSERVAÇAO"
+            }
+        ));
+        jScrollPane3.setViewportView(TableMensalidade1);
+
+        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, 490, 290));
+
+        jToggleButton1.setBackground(new java.awt.Color(51, 255, 51));
+        jToggleButton1.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
+        jToggleButton1.setForeground(new java.awt.Color(153, 153, 153));
+        jToggleButton1.setText("Renovar");
+        getContentPane().add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 250, 240, 50));
+
+        jLabelData.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        jLabelData.setForeground(new java.awt.Color(204, 204, 204));
+        jLabelData.setText("Data");
+        getContentPane().add(jLabelData, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 269, 40, 40));
+
+        jTextId.setText("    ");
+        jTextId.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextIdActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextId, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 120, 130, 30));
+
+        jTextValor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextValorActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextValor, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 242, 130, 30));
+
+        getContentPane().add(jComboBoxAluno, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, 130, 30));
+
+        getContentPane().add(jComboBoxServico, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 130, 30));
+
+        TituloAgenda.setFont(new java.awt.Font("Segoe UI Black", 0, 36)); // NOI18N
+        TituloAgenda.setForeground(new java.awt.Color(204, 204, 204));
+        TituloAgenda.setText("Agenda");
+        getContentPane().add(TituloAgenda, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 20, 150, 50));
+
+        jFormattedTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFormattedTextField1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jFormattedTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 280, 130, -1));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel1.setText("Data");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 269, 40, 40));
+        jLabel1.setText("Observação:");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 120, -1, 30));
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 278, 130, -1));
+        jLabelId.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        jLabelId.setForeground(new java.awt.Color(204, 204, 204));
+        jLabelId.setText("ID");
+        getContentPane().add(jLabelId, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 30, 50));
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 120, 130, -1));
+        jLabelAluno.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        jLabelAluno.setForeground(new java.awt.Color(204, 204, 204));
+        jLabelAluno.setText("Aluno");
+        getContentPane().add(jLabelAluno, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 50, 40));
 
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, 130, 40));
+        jLabelServico.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        jLabelServico.setForeground(new java.awt.Color(204, 204, 204));
+        jLabelServico.setText("Serviço");
+        getContentPane().add(jLabelServico, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 60, 40));
 
-        jToggleButton1.setBackground(new java.awt.Color(102, 255, 0));
-        jToggleButton1.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
-        jToggleButton1.setForeground(new java.awt.Color(102, 102, 102));
-        jToggleButton1.setText("Agendar");
-        getContentPane().add(jToggleButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 240, 240, 40));
-
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Serviço 1", "Serviço 2", "Serviço 3", "Serviço 4" }));
-        getContentPane().add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 130, -1));
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Aluno 1", "Aluno 2", "Aluno 3", "Aluno 4", " " }));
-        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, 130, -1));
-
-        jLabel2.setFont(new java.awt.Font("Segoe UI Black", 0, 36)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel2.setText("Agenda");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 20, 150, 50));
-
-        jLabel3.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel3.setText("ID");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 30, 50));
-
-        jLabel4.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel4.setText("Aluno");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 50, 40));
-
-        jLabel5.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel5.setText("Serviço");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 60, 40));
-
-        jLabel6.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel6.setText("Valor R$");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 60, -1));
-
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, "Erick", "Personal", "200", null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
-            },
-            new String [] {
-                "ID", "Aluno", "Serviço", "Valor R$", "Data"
-            }
-        ));
-        jScrollPane2.setViewportView(jTable1);
-
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, 480, 180));
+        jLabelValor.setFont(new java.awt.Font("Segoe UI Black", 0, 14)); // NOI18N
+        jLabelValor.setForeground(new java.awt.Color(204, 204, 204));
+        jLabelValor.setText("Valor R$");
+        getContentPane().add(jLabelValor, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 60, -1));
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -131,23 +156,50 @@ public class Agenda extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 120, 240, 120));
 
-        jLabelFundoAgenda.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Imagens/cadastroGym.jpg"))); // NOI18N
-        getContentPane().add(jLabelFundoAgenda, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 640, 610));
-
-        pack();
+        jLabelFundoAgenda.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentHidden(java.awt.event.ComponentEvent evt) {
+                jLabelFundoAgendaComponentHidden(evt);
+            }
+            public void componentMoved(java.awt.event.ComponentEvent evt) {
+                jLabelFundoAgendaComponentMoved(evt);
+            }
+            public void componentResized(java.awt.event.ComponentEvent evt) {
+                jLabelFundoAgendaComponentResized(evt);
+            }
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                jLabelFundoAgendaComponentShown(evt);
+            }
+        });
+        getContentPane().add(jLabelFundoAgenda, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 610));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void jTextIdActionPerformed(ActionEvent evt) {//GEN-FIRST:event_jTextIdActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_jTextIdActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void jTextValorActionPerformed(ActionEvent evt) {//GEN-FIRST:event_jTextValorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_jTextValorActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void jFormattedTextField1ActionPerformed(ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_jFormattedTextField1ActionPerformed
+
+    private void jLabelFundoAgendaComponentMoved(ComponentEvent evt) {//GEN-FIRST:event_jLabelFundoAgendaComponentMoved
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabelFundoAgendaComponentMoved
+
+    private void jLabelFundoAgendaComponentResized(ComponentEvent evt) {//GEN-FIRST:event_jLabelFundoAgendaComponentResized
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabelFundoAgendaComponentResized
+
+    private void jLabelFundoAgendaComponentShown(ComponentEvent evt) {//GEN-FIRST:event_jLabelFundoAgendaComponentShown
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabelFundoAgendaComponentShown
+
+    private void jLabelFundoAgendaComponentHidden(ComponentEvent evt) {//GEN-FIRST:event_jLabelFundoAgendaComponentHidden
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabelFundoAgendaComponentHidden
 
     /**
      * @param args the command line arguments
@@ -185,24 +237,41 @@ public class Agenda extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabelFundoAgenda;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JToggleButton jToggleButton1;
+    private JTable TableMensalidade1;
+    private JLabel TituloAgenda;
+    JComboBox<String> jComboBoxAluno;
+    JComboBox<String> jComboBoxServico;
+    private JFormattedTextField jFormattedTextField1;
+    private JLabel jLabel1;
+    private JLabel jLabelAluno;
+    private JLabel jLabelData;
+    protected JLabel jLabelFundoAgenda;
+    private JLabel jLabelId;
+    private JLabel jLabelServico;
+    private JLabel jLabelValor;
+    private JScrollPane jScrollPane1;
+    private JScrollPane jScrollPane3;
+    private JTextArea jTextArea1;
+    private JTextField jTextId;
+    private JTextField jTextValor;
+    private JToggleButton jToggleButton1;
     // End of variables declaration//GEN-END:variables
 
+    private void iniciar() {
+        this.controller.atualizaTabela();
     }
 
+    public JTable getTableMensalidade() {
+        return TableMensalidade;
+    }
+
+    public void setTableMensalidade(JTable TableMensalidade) {
+        this.TableMensalidade = TableMensalidade;
+    }
+
+    private void initComponents() {
+        
+    }
+    
+    
+} 
